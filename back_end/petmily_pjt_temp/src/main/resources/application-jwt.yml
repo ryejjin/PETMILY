@@ -1,5 +1,5 @@
 jwt:
-  secret: ddd
+  secret: ZG9uZ2h1bi1zaGFycC1kYnJ1YJH3ZWItcHJvagVjdC11c2luZy1qd3Qtc2VjcmV0L32RvbmhshdW4tc3ByaW5nLWJvb3Qtand0LWJhY2stZW5kLWFuZC66qcy1jb2xsYWJv
 
   access:
     expiration: 20000
