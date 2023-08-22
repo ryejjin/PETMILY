@@ -19,12 +19,11 @@ import com.petmily.R
 import com.petmily.presentation.view.walk.WalkFragment
 import kotlinx.coroutines.delay
 
-private const val TAG = "SHIT_WalkWorker"
+private const val TAG = "Fetmily_WalkWorker"
 class WalkWorker(context: Context, parameters: WorkerParameters) :
     CoroutineWorker(context, parameters) {
 
     private val locationManager by lazy {
-        // ~~Manager는 getSystemService로 호출
         applicationContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager
     }
     private lateinit var location1: Location
@@ -42,19 +41,16 @@ class WalkWorker(context: Context, parameters: WorkerParameters) :
 
         val foregroundInfo = createForegroundInfo(notificationContent)
         setForegroundAsync(foregroundInfo)
-        Log.d(TAG, "doWork: notification 생성")
 
         handler.post {
             getProviders()
         }
-        // Simulate receiving location updates
+
         simulateLocationUpdates()
 
         return Result.success()
     }
 
-    // Creates an instance of ForegroundInfo which can be used to update the
-    // ongoing notification.
     private fun createForegroundInfo(progress: String): ForegroundInfo {
         createNotificationChannel()
 
